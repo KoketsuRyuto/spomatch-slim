@@ -9,10 +9,6 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    get 'post_comments/index'
-    get 'post_comments/show'
-    get 'posts/index'
-    get 'posts/show'
     get '/' => 'users#index'
     resources :users, only: %(show edit update)
     resources :sports, only: %(index create edit update destroy)
