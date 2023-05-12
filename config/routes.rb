@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :post_comments, only: %(index show destroy)
   end
 
-  namespace :public do
+  scope module: :public do
     root to: 'homes#top'
     get 'top' => 'homes#about'
     resources :users, only: %(show edit update)
