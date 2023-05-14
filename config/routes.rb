@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root to: 'homes#top'
-    get 'top' => 'homes#about'
+    get 'about' => 'homes#about'
     resources :users, only: ["show", "edit" ,"update"]
     get 'users/:id/confilm' => 'users#confilm', as: 'users/confilm'
     patch 'users/:id/withdraw' => 'users#withdraw', as: 'users/withdraw'
