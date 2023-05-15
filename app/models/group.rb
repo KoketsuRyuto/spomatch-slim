@@ -1,3 +1,4 @@
 class Group < ApplicationRecord
-  belongs_to :sport
+  has_many :group_sports, dependent: :destroy
+  had_many :sport, through: :group_sports
 end

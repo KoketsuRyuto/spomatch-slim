@@ -64,10 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_084228) do
     t.string "name", null: false
     t.text "introduction", null: false
     t.integer "owner_id", null: false
-    t.integer "sport_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sport_id"], name: "index_groups_on_sport_id"
   end
 
   create_table "post_comments", force: :cascade do |t|
@@ -133,7 +131,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_084228) do
   add_foreign_key "group_sports", "sports"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
-  add_foreign_key "groups", "sports"
   add_foreign_key "post_comments", "posts"
   add_foreign_key "post_comments", "users"
   add_foreign_key "post_tags", "posts"
