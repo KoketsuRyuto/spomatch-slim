@@ -1,6 +1,8 @@
 h3 投稿詳細
-h4.post-title = @post.title
-div.post-body = simple_format(@post.body)
+h4.post-title 
+  = @post.title
+div.post-body 
+  = simple_format(@post.body)
 - if @post.user == current_user 
   = link_to "編集", edit_post_path(@post)
   br
