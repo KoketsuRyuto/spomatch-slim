@@ -4,22 +4,6 @@ h4.post-title
 .post-body 
   = simple_format(@post.body)
 - if @post.user == current_user 
-  = link_to "編集", edit_post_path(@post)
+  = link_to "編集", edit_post_path(@post), class: "btn btn-primary"
   br
-  = link_to "削除", post_path(@post),  data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}
-
-.btn-group 
-  btn
-  button.btn.btn-danger.dropdown-toggle(data-bs-toggle='dropdown', aria-expanded='false')
-    | Action
-  ul.dropdown-menu 
-    li
-      a.dropdown-item(href = "#") Action 
-    li 
-      a.dropdown-item(href = "#") Another action 
-    li 
-      a.dropdown-item(href = "#") Something else here 
-    li 
-      hr.dropdown-divider 
-    li 
-      a.dropdown-item(href = "#") Separeted link
+  = link_to "削除", post_path(@post),  data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}, class: "btn btn-danger"
