@@ -72,3 +72,6 @@ end
 
 gem "devise"
 gem 'slim-rails'
+gem 'bootstrap', '~> 5.0.2'
+gem 'jquery-rails'
+
