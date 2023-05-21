@@ -3,4 +3,12 @@
     .col-md-8.mx-auto 
       h1 投稿一覧
       - @posts.each do |post|
-        = link_to post.title, post_path(post)
+        table.table.table-borderless.mt-3 
+          tr.border-bottom 
+            td 
+              = link_to post.title, post_path(post)
+              br/
+              = post.body.truncate(20)
+              br/
+              label.text-muted 
+                small = post.created_at 

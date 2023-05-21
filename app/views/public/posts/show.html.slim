@@ -1,9 +1,11 @@
-h3 投稿詳細
-h4.post-title 
-  = @post.title
-.post-body 
-  = simple_format(@post.body)
-- if @post.user == current_user 
-  = link_to "編集", edit_post_path(@post), class: "btn btn-primary"
-  br
-  = link_to "削除", post_path(@post),  data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}, class: "btn btn-danger"
+.container.mb-5 
+  .row.mt-5 
+    .col-md-8.mx-auto 
+      h4.post-title 
+        = @post.title
+          .post-body 
+            = simple_format(@post.body)
+            - if @post.user == current_user 
+              = link_to "編集", edit_post_path(@post), class: "btn btn-primary"
+              br
+              = link_to "削除", post_path(@post),  data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}, class: "btn btn-danger"

@@ -1,12 +1,22 @@
-h1 新規投稿
-= form_with model: @post, url: posts_path, method: :post do |f|
-  .form-group 
-    = f.label :title 
-    <br>
-    = f.text_field :title
-  .form-group 
-    = f.label :body
-    <br>
-    = f.text_area :body
-  .action 
-    = f.submit '投稿', class: "btn btn-success"
+.container.mb-5 
+  .row.mt-5 
+    .col-md-8.mx-auto 
+      .post-body 
+        = form_with model: @post, url: posts_path, method: :post do |f|
+          .form-group 
+            = f.label :title 
+            br/
+            = f.text_field :title
+
+          .form-group 
+            = f.label :post_image
+            br/
+            = f.file_field :post_image
+
+          .form-group 
+            = f.label :body
+            br/
+            = f.text_area :body
+
+          .action 
+            = f.submit '投稿', class: "btn btn-success"
