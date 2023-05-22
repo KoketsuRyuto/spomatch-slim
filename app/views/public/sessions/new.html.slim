@@ -1,0 +1,26 @@
+.container 
+  .row.mt-5.mb-3.d-flex.justify-content-center 
+    .col-md-6.mx-auto 
+      .card.shadow 
+        .card-header.text-center.bg-dark.text-white ログイン
+        .card-body 
+          = form_with model: resource, url: new_user_session_path do |f|
+            .form-group.row.mt-4.mx-2
+              = f.label :email, "メールアドレス"
+              br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+
+            .form-group.row.mt-4.mx-2 
+              = f.label :password, "パスワード"
+              br/
+              = f.password_field :password, autocomplete: "current-password", class: "from-control"
+
+            .atcions.d-flex.justify-content-center 
+              = f.submit "ログイン", class: "btn btn-primary mx-5 my-4"
+
+          .row.mt-3.d-flex.justify-content-center 
+            h6.text-center 登録がお済みでない方はこちら
+
+          .text-center 
+            == render "public/shared/links"
+

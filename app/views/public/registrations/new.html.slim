@@ -1,0 +1,36 @@
+.container 
+  .row.mt-5.mb-3.d-flex.justify-content-center 
+    .col-md-6.mx-auto 
+      .card.shadow 
+        .card-header.text-center.bg-dark.text-white 新規会員登録
+        .card-body 
+          = form_with model: resource, url: user_registration_path, method: :post do |f|
+            == render "public/shared/error_messages", resource: resource 
+            .form-group.row.m-2 
+              = f.label :name, "ユーザーネーム"
+              br/
+              = f.text_field :name, class: "form-control", autofocus: true 
+
+            .form-group.row.m-2 
+              = f.label :email, "メールアドレス"
+              br/
+              = f.email_field :email, autocomplete: "email", placeholder: "example@example", class: "form-control"
+
+            .form-group.ro.m-2 
+              = f.label :password, "パスワード（6文字以上）"
+              br/
+              = f.password_field :password, autocomplete: "new-password", class: "form-control"
+
+            .form-group.row.m-2 
+              = f.label :password_confirmation, "パスワード（確認用）"
+              br/
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+
+            .action.d-flex.justify-content-center 
+              = f.submit "新規登録", class: "btn btn-success px-5 my-3"
+
+          .row.d-flex.justify-content-center 
+            h6.text-center すでに登録済みの方はこちら
+            
+          .text-center 
+            == render "public/shared/links"
