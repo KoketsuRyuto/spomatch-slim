@@ -12,6 +12,7 @@ header
             - if user_signed_in?
               li.nav-item = link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }
               li.nav-item = link_to "新規投稿", new_post_path 
+              li.nav-item = link_to "投稿一覧", posts_path 
             - else
               li.nav-item = link_to "新規登録", new_user_registration_path 
               li.nav-item = link_to "ログイン", new_user_session_path 
